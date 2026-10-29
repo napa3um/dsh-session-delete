@@ -1,0 +1,51 @@
+{
+  "name": "dsh-session-delete",
+  "version": "0.1.0",
+  "description": "Permanently delete DeepSeek Harness sessions, including logs, projection caches, workspace references, scheduled tasks, and subagent descendants.",
+  "type": "module",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "client",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek",
+    "deepseek-harness",
+    "session",
+    "delete",
+    "privacy"
+  ],
+  "engines": {
+    "dsh": ">=0.2.1-rc.3",
+    "node": ">=22"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check lib/index.js && node --check lib/delete.js && node --check lib/paths.js && node --check client/client.js"
+  }
+}
