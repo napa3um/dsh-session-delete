@@ -57,7 +57,7 @@ Open **Plugins → Install**, paste the GitHub repository URL, and enable
 ### From the CLI
 
 ```sh
-dsh plugin add github:OWNER/REPO
+dsh plugin add github:Sartherland/dsh-session-delete
 ```
 
 Then enable the `dsh-session-delete` bundle in the Plugins page and restart if
@@ -75,7 +75,7 @@ to `dependencies` and its name to `dsh.profile.bundles`:
 ```json
 {
   "dependencies": {
-    "dsh-session-delete": "github:OWNER/REPO"
+    "dsh-session-delete": "github:Sartherland/dsh-session-delete"
   },
   "dsh": {
     "profile": {
@@ -162,7 +162,7 @@ test/delete.test.js host-side deletion tests
 安装：
 
 ```sh
-dsh plugin add github:OWNER/REPO
+dsh plugin add github:Sartherland/dsh-session-delete
 ```
 
 然后在 **插件** 页面启用并重启（若未启用 HMR）。

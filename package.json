@@ -4,6 +4,14 @@
   "description": "Permanently delete DeepSeek Harness sessions, including logs, projection caches, workspace references, scheduled tasks, and subagent descendants.",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sartherland/dsh-session-delete.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sartherland/dsh-session-delete/issues"
+  },
+  "homepage": "https://github.com/Sartherland/dsh-session-delete#readme",
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js",
