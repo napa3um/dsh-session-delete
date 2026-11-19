@@ -48,6 +48,24 @@ window.__ModuleLoader__.load({
       'close': '关闭',
     }
 
+    const ru = {
+      'menu.delete': 'Удалить навсегда…',
+      'dialog.title': 'Удалить сессию навсегда?',
+      'dialog.body': 'Это удалит «{title}» без возможности отмены.',
+      'dialog.subagents': 'Это также удалит {n} диалог(ов) субагентов, запущенных в этой сессии.',
+      'dialog.warning': 'Журнал беседы, кэш проекции, членство в рабочей области, состояние закрепления/архивации, запланированные напоминания и временные файлы сессии будут удалены.',
+      'dialog.note': 'Вложения, общие с другими сессиями, сохраняются. Поисковый индекс перестроится при следующем поиске.',
+      'dialog.cancel': 'Отмена',
+      'dialog.confirm': 'Удалить навсегда',
+      'dialog.pending': 'Удаление…',
+      'dialog.close': 'Закрыть',
+      'dialog.errorTitle': 'Не удалось удалить сессию',
+      'success.title': 'Сессия удалена',
+      'success.body': 'Навсегда удалено {n} сессий.',
+      'success.partial': 'Удалено, но некоторые шаги очистки сообщили о предупреждениях. Подробности см. в журнале хоста.',
+      'close': 'Закрыть',
+    }
+
     /** Minimal observable store; the slot hook contract only needs these two methods. */
     function createStore(initial) {
       let value = initial
@@ -242,6 +260,10 @@ window.__ModuleLoader__.load({
       ctx.effect(
         () => ctx.locale.register(NS, { en, zh }),
         'dsh-session-delete: dictionaries',
+      )
+      ctx.effect(
+        () => ctx.locale.register(NS, 'ru', ru),
+        'dsh-session-delete: ru dictionary'
       )
 
       const deleteRequest = createStore(null)
